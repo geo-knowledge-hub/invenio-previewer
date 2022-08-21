@@ -11,6 +11,7 @@
 from __future__ import absolute_import, print_function
 
 from pathlib import Path
+
 from flask import render_template
 
 from ..proxies import current_previewer
@@ -26,9 +27,8 @@ def can_preview(file):
 
 def preview(file):
     """Render the appropriate template with embed flag."""
-
     # extracting file extension
-    # ToDo: Maybe, `PreviewFile` (Invenio App RDM) can provides a 
+    # ToDo: Maybe, `PreviewFile` (Invenio App RDM) can provides a
     #       `extension` or `type` attribute with the file extension.
     extension = Path(file.filename).suffix.replace('.', '')
 
